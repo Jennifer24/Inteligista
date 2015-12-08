@@ -1,0 +1,34 @@
+<h1>Create a QUIZ</h1>
+
+
+<%= form_for @quiz do |quiz_form| %>
+  <p>
+    <%= quiz_form.label :name %><br>
+    <%= quiz_form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= quiz_form.label :prize_name %><br>
+    <%= quiz_form.text_field :prize_name %>
+  </p>
+
+  <p>
+    <%= quiz_form.label :prize_img %><br>
+    <%= quiz_form.text_field :prize_img %>
+  </p>
+
+  <p>
+    <%= quiz_form.label :points_to_win %><br>
+    <%= quiz_form.text_field :points_to_win %>
+  </p>
+
+  <p>
+    <%= quiz_form.label :coins_to_play %><br>
+    <%= quiz_form.text_field :coins_to_play %>
+  </p>
+ 
+ 
+  <p>
+    <%= quiz_form.submit %>
+  </p>
+<% end %>

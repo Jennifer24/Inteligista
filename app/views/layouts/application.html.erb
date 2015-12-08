@@ -12,7 +12,10 @@
 		<%= javascript_include_tag 'application' %>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<%= csrf_meta_tags %>
+
 	</head>
+
+
 	<body>
 		<nav class="navbar navbar-default nav-theme">
 			<div class="container-fluid">
@@ -29,7 +32,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">ABOUT US <span class="sr-only">(current)</span></a></li>
+						<li><a href="/about_us">ABOUT US <span class="sr-only">(current)</span></a></li>
 						<li><a href="#">PLAY</a></li>
 						<li><a href="#">SHOP</a><li>
 						
@@ -57,6 +60,15 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 		<%= yield %>
-		<footer>Footer</footer>
-	</body>
+		</body>
+
+		<footer> copyright
+			<!-- <div class="panel panel-default"> -->
+  	<!-- <div class="panel-body">
+   
+  	</div> -->
+  	<!-- <div c<!-- lass="panel-footer">Panel footer</div>
+	</div> -->
+		</footer>
+	
 </html>

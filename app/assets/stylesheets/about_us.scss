@@ -1,0 +1,34 @@
+.about-us {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #F4E6E6;
+	width: 100%;
+
+}
+
+.image {
+	width: 100%;
+	height: 50%;
+
+}
+
+.editorial {
+	background: white;
+	font-family: Playfair Display, serif;
+	text-align: center;
+}
+
+.overlay {
+
+	content: " ";
+	display: block;
+	position: relative;
+  	width: 300px;
+  	line-height: 25px;
+  	height: 200px;
+  	margin-left: 500px;
+  	margin-top: -300px;
+  	text-align: center;
+  	background-color: #FFFFF;
+  	border-radius: 5px;
+}

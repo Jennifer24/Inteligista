@@ -1,0 +1,20 @@
+<h1> QUIZ LIST </h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Prize Name</th>
+    <th>Coins To Play</th>
+    <th>Points To Win</th>
+  </tr>
+ 
+  <% @quizzes.each do |quiz| %>
+  
+    <tr>
+      <td><%= quiz.name %></td>
+      <td><%= quiz.prize_name %></td>
+      <td><%= quiz.coins_to_play %></td>
+      <td><%= quiz.points_to_win %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-
   devise_for :users
-  get '/' => 'home#index'
-
   
+  resources :quizzes do
+    resources :questions
+  end
+
+
+  get '/' => 'home#index'
+  get '/about_us' => 'home#about_us'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

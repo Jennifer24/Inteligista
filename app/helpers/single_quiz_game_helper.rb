@@ -1,0 +1,2 @@
+module SingleQuizGameHelper
+end

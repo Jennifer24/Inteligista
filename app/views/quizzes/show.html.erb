@@ -1,0 +1,13 @@
+<% if @quizNotFoundError %>
+  <%= @quizNotFoundError %>
+<% else %>
+<p>
+  <strong>Name:</strong>
+  <%= @quiz.name %>
+</p>
+ 
+<p>
+  <strong>Prize:</strong>
+  <%= @quiz.prize_name %>
+</p>
+<% end %>
