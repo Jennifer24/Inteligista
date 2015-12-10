@@ -1,43 +1,51 @@
 class SingleQuizGameController < ApplicationController
-	def new 
-		authenticate_user!
+ 
 
-		@quiz = Quiz.find_by(id: params[:id])
+  def new
+    authenticate_user!
 
-		if (current_user.coins >= @quiz.coins_to_play)
-			current_user.coins = current_user.coins - @quiz.coins_to_play
-			current_user.save
-			render 'new'
-		else
-			redirect_to '/shop'
-		end
-	end
+    @quiz = Quiz.find_by(id: params[:id])
 
-	def show
-	    @quiz = current_quiz.quizzes.find(params[:id])	
-	    @quizzes = Quiz.all
+    if (current_user.coins >= @quiz.coins_to_play)
+      current_user.coins = current_user.coins - @quiz.coins_to_play
+      current_user.save
+      render 'new'
+    else
+      redirect_to '/shop'
+    end
+  end
 
-	end
 
-	def validate_answer
-    # answer the user gave
-    answer = params[:answer]
+  def show
+    @quiz = current_quiz.quizzes.find(params[:id])
+    @quizzes = Quiz.all
 
+  end
+
+
+  def validate_response
     # Find the quiz the user is taking
     quiz = Quiz.find_by_id(params[:quiz_id])
 
     # find the question the user is on
-   	question = 
+    question_number = params[:question_number].to_i - 1
+
+    # answer the user gave
+    response = params[:response]
+
+    question = quiz.questions[question_number]
 
     # did the user answer the question correctly?
-    if quiz.correct_answer == answer
-
-        # They did answer correctly
-
-        # Increment the user's correctResponse field
-
+    if question.correct_response == response
+      # Increment the user's correctResponse field
+      # user.points += 1
+      # They did answer correctly
+      # return correct to user
+      render :json => {res:"correct!"}
+    else
+      render :json => {res:"wrong!"}
     end
-end
+  end
 
 
 end

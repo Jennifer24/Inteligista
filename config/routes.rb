@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   get '/play' => 'home#play'
   get '/shop' => 'home#shop'
   get '/single_quiz_game/new/:id' => 'single_quiz_game#new'
-
-
+  post '/validate_response/quiz/:quiz_id/question/:question_number/response/:response/' => 'single_quiz_game#validate_response'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

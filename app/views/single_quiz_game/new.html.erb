@@ -1,14 +1,15 @@
+<script>
+  var quiz_id = "<%= @quiz.id %>";
+</script>
+
+<div class="quiz-container">
+
 <h1> Quiz <%= @quiz.name %> </h1>
 
-<ul>
-	<% @quiz.name %>
-</ul> 
-
-<% @quiz.name %>
-
-
-
 <h2>Questions</h2>
+
+<p>Points: <span class="points">0</span></p>
+
 <% @quiz.questions.each_with_index do |question, i | %>
   <div class="question-container <%= i == 0 ? "active initial" : "" %>">
   <p>
@@ -17,22 +18,22 @@
   </p>
  
   <p>
-    <a class="btn btn-default" href="#" role="button"><strong> A: </strong></a>
+    <a class="btn btn-default option" href="#" id="optionA" data-selected-response="a" role="button"><strong> A </strong></a>
     <%= question.response_a %>
   </p>
 
    <p>
-    <a class="btn" href="#" role="button"><strong> B: </strong></a>
+    <a class="btn btn-default option" href="#" id="optionB" data-selected-response="b" role="button"><strong> B </strong></a>
     <%= question.response_b %>
   </p>
 
    <p>
-    <a class="btn btn-default" href="#" role="button"><strong> C:</strong></a>
+    <a class="btn btn-default option" href="#" id="optionC" data-selected-response="c" role="button"><strong>C</strong></a>
     <%= question.response_c %>
   </p>
 
    <p>
-    <a class="btn btn-default" href="#" role="button"><strong> D:</strong></a>
+    <a class="btn btn-default option" id="optionD" data-selected-response="d" href="#" role="button"><strong>D</strong></a>
     <%= question.response_d %>
   </p>
 
@@ -45,5 +46,4 @@
   
 
  
-
-
+</div>
