@@ -1,0 +1,32 @@
+
+<%= form_for([@quiz, @quiz.questions.build]) do |quiz_form| %>
+  <p>
+    <%= quiz_form.label :question_text %><br>
+    <%= quiz_form.text_area :question_text %>
+  </p>
+  <p>
+    <%= quiz_form.label :response_a %><br>
+    <%= quiz_form.text_field :response_a %>
+  </p>
+  <p>
+    <%= quiz_form.label :response_b %><br>
+    <%= quiz_form.text_field :response_b %>
+  </p>
+  <p>
+    <%= quiz_form.label :response_c %><br>
+    <%= quiz_form.text_field :response_c %>
+  </p>
+  <p>
+    <%= quiz_form.label :response_d %><br>
+    <%= quiz_form.text_field :response_d %>
+  </p>
+	
+	<p>
+    <%= quiz_form.label :correct_response %><br>
+    <%= quiz_form.text_field :correct_response %>
+  </p>
+
+  <p>
+    <%= quiz_form.submit %>
+  </p>
+<% end %>

@@ -34,6 +34,7 @@
 	background-color: #E1EBF7;
 }
 
-.panel-footer {
+.footer {
+	height: 100px;
 	bottom: 0;
 }

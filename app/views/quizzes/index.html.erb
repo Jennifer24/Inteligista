@@ -2,19 +2,25 @@
  
 <table>
   <tr>
+    <th colspan="1">ID</th>
     <th>Name</th>
     <th>Prize Name</th>
     <th>Coins To Play</th>
     <th>Points To Win</th>
+    <th colspan="1">Actions</th>
   </tr>
  
   <% @quizzes.each do |quiz| %>
   
     <tr>
+      <td><%= quiz.id %></td>
       <td><%= quiz.name %></td>
       <td><%= quiz.prize_name %></td>
       <td><%= quiz.coins_to_play %></td>
       <td><%= quiz.points_to_win %></td>
+      <td><%= link_to 'Destroy', quiz_path(quiz),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

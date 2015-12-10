@@ -15,11 +15,17 @@
 }
 
 .quiz-1 {
-	background-image: asset-url("gitana_quiz1.jpeg");
+	background-image: url("http://www.wmagazine.com/wp-content/uploads/2015/10/Rihanna-1542x2313.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
+}
 
+.quiz-2 {
+	background-image: asset-url("gitana_quiz1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;	
 }
 
 .pin {
@@ -76,6 +82,14 @@
 
 .modal-footer { 
 	background-color: #F4E6E6;
+
+}
+
+.footer {
+	margin-top: 100px;
+	display: block;
+	background-color: #D8E6F3;
+	height: 75px;
 
 }
 

@@ -1,1 +1,49 @@
-<h1>This is a single quiz</h1>
+<h1> Quiz <%= @quiz.name %> </h1>
+
+<ul>
+	<% @quiz.name %>
+</ul> 
+
+<% @quiz.name %>
+
+
+
+<h2>Questions</h2>
+<% @quiz.questions.each_with_index do |question, i | %>
+  <div class="question-container <%= i == 0 ? "active initial" : "" %>">
+  <p>
+    <strong>Question:</strong>
+    <%= question.question_text %>
+  </p>
+ 
+  <p>
+    <a class="btn btn-default" href="#" role="button"><strong> A: </strong></a>
+    <%= question.response_a %>
+  </p>
+
+   <p>
+    <a class="btn" href="#" role="button"><strong> B: </strong></a>
+    <%= question.response_b %>
+  </p>
+
+   <p>
+    <a class="btn btn-default" href="#" role="button"><strong> C:</strong></a>
+    <%= question.response_c %>
+  </p>
+
+   <p>
+    <a class="btn btn-default" href="#" role="button"><strong> D:</strong></a>
+    <%= question.response_d %>
+  </p>
+
+	  <a class="btn btn-default next-btn" href="#" role="button"> > </a>
+  </div>
+
+
+  <% end %>
+
+  
+
+ 
+
+

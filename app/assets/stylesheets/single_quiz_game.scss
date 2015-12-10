@@ -1,3 +1,9 @@
 // Place all the styles related to the single_quiz_game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.question-container {
+	display: none;
+}
+.question-container.initial {
+	display: block;
+}

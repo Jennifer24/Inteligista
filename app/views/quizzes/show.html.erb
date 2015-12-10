@@ -9,5 +9,56 @@
 <p>
   <strong>Prize:</strong>
   <%= @quiz.prize_name %>
+  <img src="<%= @quiz.prize_img %>" width="100" height="100" />
 </p>
+
+<p>
+  <strong>Points To Win</strong>
+  <%= @quiz.points_to_win %>
+</p>
+
+<p>
+  <strong>Coins To Play</strong>
+  <%= @quiz.coins_to_play %>
+</p>
+
+
+<h2>Questions</h2>
+<% @quiz.questions.each do |question| %>
+  <p>
+    <strong>Question:</strong>
+    <%= question.question_text %>
+  </p>
+ 
+  <p>
+    <strong>Option A:</strong>
+    <%= question.response_a %>
+  </p>
+
+   <p>
+    <strong>Option B:</strong>
+    <%= question.response_b %>
+  </p>
+
+   <p>
+    <strong>Option C:</strong>
+    <%= question.response_c %>
+  </p>
+
+   <p>
+    <strong>Option D:</strong>
+    <%= question.response_d %>
+  </p>
+
+   <p>
+    <strong>Correct Response:</strong>
+    <%= question.correct_response %>
+  </p>
+
+
+  
+
 <% end %>
+
+<% end %>
+

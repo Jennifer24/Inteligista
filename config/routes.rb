@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index'
   get '/about_us' => 'home#about_us'
+  get '/play' => 'home#play'
+  get '/shop' => 'home#shop'
+  get '/single_quiz_game/new/:id' => 'single_quiz_game#new'
 
 
 

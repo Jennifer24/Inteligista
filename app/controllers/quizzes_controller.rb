@@ -37,6 +37,14 @@ class QuizzesController < ApplicationController
   end
 
 
+  def destroy
+    @quiz = Quiz.find(params[:id])
+    @quiz.destroy
+ 
+    redirect_to quizzes_path
+  end
+
+
   private
   def quiz_params
     params.require(:quiz).permit(:name, :prize_name, :prize_img, :points_to_win, :coins_to_play)

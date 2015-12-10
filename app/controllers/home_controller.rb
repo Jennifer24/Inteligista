@@ -5,8 +5,10 @@ class HomeController < ApplicationController
 		render 'index'
 	end
 
-	def new
-		render 'new'
+	def shop
+		render 'shop'
 	end
+
+
 
 end
