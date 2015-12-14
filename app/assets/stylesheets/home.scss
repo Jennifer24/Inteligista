@@ -8,41 +8,119 @@
 
 .image-1 {
 	background-color: #F4E6E6;
-	height: 300px;
+	height: 250px;
 	font-family: Playfair Display, serif;
 	font-weigth: 400;
-
+	margin-bottom: 20px;
+	
 }
 
 .quiz-1 {
 	background-image: url("http://www.wmagazine.com/wp-content/uploads/2015/10/Rihanna-1542x2313.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
+    height: 700px;
+    position: relative;
 }
 
-.quiz-2 {
-	background-image: asset-url("gitana_quiz1.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;	
+.editorial-overlay {
+	position: absolute;
+	background-color: white; 
+	bottom: -120px;
+	right: 250px;
+	width: 750px;
+	height: 250px;
 }
+
+.editorial-content {
+	font-family: Playfair Display, serif;
+}
+
+.home-content {
+	font-family: Playfair Display, serif;
+	padding-top: 75px;
+	padding-bottom: 75px;
+	padding-left: 30px;
+	padding-right: 30px;
+}	
+
+.play-overlay {
+	position: relative;
+	background-color: white; 
+	bottom: -40px;
+	right: -450px;
+	width: 280px;
+	height: 100px;
+	border: 3px solid #000;
+
+}
+
+
+// .play-button-overlay {
+// 	position: relative;
+// 	border: 3px solid white;
+// 	bottom: -150px;
+// 	right: -450px;
+// 	width: 280px;
+// 	height: 100px;
+// }
+
+
+.some-box {
+  background-image: url(" http://i.dailymail.co.uk/i/pix/2015/10/02/17/2D03BA5E00000578-3257642-image-a-19_1443803597238.jpg");
+  height: 600px;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+
+}
+
+.some-transparent-button {
+  position: absolute;
+  top: 450px;
+  right: 500px;
+  background-color: transparent;
+  z-index: 100;
+  color: white;
+  height: 50px;
+  width: 300px;
+  border: 3px solid white;
+}
+
+.some-transparent-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
 
 .pin {
-  border: 1px solid grey;
+  border: 1px solid #F3F3F3;
   width: 270px;
-  margin: 20px;
-  border-radius: 5px;
+  margin: 25px;
+  border-radius: 3px;
   float: left;
-  height: 500px;
+  height: 700px;
+  background-color: #F4E6E6;
 
-
-}
+ }
 
 .pin img {
   width: 100%;
-  height: 80%;
+  height: 90%;
 }
+
+
+.glyphicon.glyphicon-heart {
+	color: #9b885f;
+}
+
+.glyphicon.glyphicon-heart:hover {
+	color: blue;
+	text-decoration: none;
+
+}
+
 
 
 .modal-header {
@@ -65,14 +143,14 @@
 
 }
 
-.center-txt {
-	
-}
+
 
 .welcome-txt {
 	text-align: center;
 	//color:
 }
+
+
 
 .modal-img {
 	width: 100%;
@@ -91,6 +169,58 @@
 	height: 75px;
 }
 
+.rw-words{
+	display: inline;
+	text-indent: 10px;
+	color: black;
+	font-size: 250%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.rw-words span{
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	width: 100%;
+	color: #6b969d;
+}
+.rw-words-1 span{
+	animation: rotateWordsFirst 18s linear infinite 0s;
+}
+.rw-words-2 span{
+	animation: rotateWordsSecond 18s linear infinite 0s;
+}
+.rw-words span:nth-child(2) { 
+	animation-delay: 3s; 
+	
+}
+.rw-words span:nth-child(3) { 
+	animation-delay: 6s; 
+	
+}
 
 
+@keyframes rotateWordsFirst {
+    0% { opacity: 1; animation-timing-function: show; height: 0px; }
+    8% { opacity: 1; height: 60px; }
+    19% { opacity: 1; height: 60px; }
+	25% { opacity: 0; height: 60px; }
+    100% { opacity: 0; }
+}
 
+@keyframes rotateWordsSecond {
+    0% { opacity: 1; animation-timing-function: show; width: 0px; }
+    10% { opacity: 0.3; width: 0px; }
+	20% { opacity: 1; width: 100%; }
+    27% { opacity: 0; width: 100%; }
+    100% { opacity: 0; }
+}
+
+.disapearing-words {
+	text-align: center;
+	font-size: 300%;
+	width: 10vw;
+	font-family: Playfair Display, serif;
+	color: black;
+}

@@ -11,18 +11,20 @@ $(document).on('ready', function() {
 
     $(".next-btn").on('click', function() {
         //Make a call to server if the question is correct
-
-        if(!response) {
+        console.log(response);
+        if(!response){
+        	alert("hi")
         	return;
-        }
+        } 
 
         $.ajax({
             url: "/validate_response/quiz/" + quiz_id + "/question/" + question_number + "/response/" + response,
             method: 'post',
             success: function(result) {
+            	console.log(result)
                 if (result.res == "correct!") {
                 	total_points += 1;
-                	$(".points").text(total_points)
+                	$(".js-points").text(total_points)
                 }
 
                 // Hide the current question
@@ -31,14 +33,23 @@ $(document).on('ready', function() {
                 // Find the next question
                 var nextquestion = $('.question-container.active').next();
 
-                // Remove the active class from the current question
+				 // Remove the active class from the current question
                 $('.question-container.active').removeClass("active");
 
-                // Make the next question active
-                nextquestion.addClass("active");
-                nextquestion.show();
-                question_number += 1;
-                response = "";
+                if (nextquestion.length === 0) {
+                	console.log("help!");
+                	// show results modal
+                	 $('.js-points').text(total_points)
+                	$('#end-quiz-modal').modal();
+                }
+
+                else {
+                	// Make the next question active
+                	nextquestion.addClass("active");
+                	nextquestion.show();
+                	question_number += 1;
+                	response = "";
+                }
 
             }
         });

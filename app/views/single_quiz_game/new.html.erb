@@ -8,12 +8,12 @@
 
 <h2>Questions</h2>
 
-<p>Points: <span class="points">0</span></p>
+<p>Score: <span class="js-points">0</span> <span>/ 10</span></p>
 
 <% @quiz.questions.each_with_index do |question, i | %>
   <div class="question-container <%= i == 0 ? "active initial" : "" %>">
   <p>
-    <strong>Question:</strong>
+    <strong>Question <%= i+1 %></strong>
     <%= question.question_text %>
   </p>
  
@@ -40,10 +40,35 @@
 	  <a class="btn btn-default next-btn" href="#" role="button"> > </a>
   </div>
 
-
-  <% end %>
+ 
+<% end %>
 
   
 
  
 </div>
+
+
+  <div class="modal fade" id="end-quiz-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">FASHION CURRENCY TOTAL: <span class="js-points"></span></h4>
+      </div>
+      <div class="modal-body center-text">
+      <div>
+      <img class="modal-img" src="https://assets13.modaoperandi.com/uploads/site/custom_molecules/embedded_image/image/18368/1447456623-upload.jpeg?_v=1447456623"></div>
+      </div>
+        <center><p class="points"> USE YOUR FASHION CURRENCY TO SHOP!!</p><center>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="/shop"><button type="button" class="btn btn-primary">SHOP</button></a>
+      </div>
+    </div><!-- /.modal-content
+  </div><!-- /.modal-dialog
+</div><!-- /.modal
+
+
+

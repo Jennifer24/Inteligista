@@ -13,6 +13,11 @@ class SingleQuizGameController < ApplicationController
     else
       redirect_to '/shop'
     end
+
+    # if  current_user.total_points = current_user.total_points - @quiz.points_to_play
+    #  	current_user.save
+    #  end
+
   end
 
 
@@ -37,10 +42,8 @@ class SingleQuizGameController < ApplicationController
 
     # did the user answer the question correctly?
     if question.correct_response == response
-      # Increment the user's correctResponse field
-      # user.points += 1
+       # user.points += 1
       # They did answer correctly
-      # return correct to user
       render :json => {res:"correct!"}
     else
       render :json => {res:"wrong!"}
